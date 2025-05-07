@@ -3,10 +3,15 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from'cors';
+import postRoutes from './routes/posts.js';
+
+
 
 //in every express application we first initialize the app 
 const app = express();
 //now we can run different methods in this instance of app
+
+app.use('/posts' , postRoutes);
 
 app.use(bodyParser.json({ limit : "30mb" ,extended : true}));
 app.use(bodyParser.urlencoded({ limit : "30mb" ,extended : true}));
