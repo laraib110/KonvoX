@@ -19,8 +19,9 @@ app.use(cors());
 
 //now we can connet with the db = we are using mongodb atlas 
 
-const CONNECTION_URL = 'mongodb+srv://l227958:ikeD0UKJzoSQKDtB@konvox.fryfb7u.mongodb.net/?retryWrites=true&w=majority&appName=KonvoX';
+const CONNECTION_URL = 'mongodb+srv://l226192:4GTTvQO7fSYZhrQU@konvoxdb1.mcxgbt2.mongodb.net/?retryWrites=true&w=majority&appName=KonvoXDB1';
 const PORT = process.env.PORT || 5000;
+
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
