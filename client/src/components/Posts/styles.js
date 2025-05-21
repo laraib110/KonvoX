@@ -1,7 +1,26 @@
-import { styled } from '@mui/material/styles';
-import { Grid } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
-export const ContainerGrid = styled(Grid)(({ theme }) => ({
-  padding: theme.spacing(2),
-  // Add other container-level styles here if needed
+export default makeStyles((theme) => ({
+  mainContainer: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  smMargin: {
+    margin: '8px', // theme.spacing(1)
+  },
+  actionDiv: {
+    textAlign: 'center',
+  },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  heading: {
+  fontFamily: "'Pacifico', cursive",
+  fontSize: '2.5rem',
+  flexGrow: 1,
+  textAlign: 'center',
+  color: '#e91e63', // Optional: match the pink theme
+},
 }));

@@ -1,33 +1,28 @@
-import { Container, TextField, Button, Paper } from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
-export default function Form() {
-  return (
-    <Container
-      sx={{
-        '& .MuiTextField-root': {
-          margin: 1, // theme.spacing(1)
-        },
-      }}
-    >
-      <Paper sx={{ padding: 2 }}>
-        <form
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
-          <TextField
-            fullWidth
-            variant="outlined"
-            label="Text Field"
-            sx={{ margin: '10px 0', width: '97%' }}
-          />
-          <Button variant="contained" sx={{ marginBottom: 2 }}>
-            Submit
-          </Button>
-        </form>
-      </Paper>
-    </Container>
-  );
-}
+export default makeStyles(() => ({
+  root: {
+    '& .MuiTextField-root': {
+      margin: '8px', // theme.spacing(1)
+    },
+  },
+  paper: {
+    padding: '16px',
+    maxWidth: '800px',  // Restricting the width of the form
+    margin: 'auto', // Center align
+    borderRadius: '16px', // theme.spacing(2)
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',  // Adjust form layout
+    gap: '10px',
+    alignItems: 'center',
+  },
+  fileInput: {
+    width: '97%',
+    margin: '10px 0',
+  },
+  buttonSubmit: {
+    marginBottom: '10px',
+  },
+}));

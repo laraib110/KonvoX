@@ -1,13 +1,14 @@
-//inside this folder we will write all the routes fpr the posts
 import express from 'express';
-
-import { getposts , createPost } from '../controllers/posts.js';
+import { getPosts, getPost, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
-//now we can start ading our routes
 
-//will work on only http://localhost:5000/posts
-router.get('/' , getposts);
-router.post('/', createPost)
+router.get('/', getPosts);
+router.post('/', auth, createPost);
+router.get('/:id', getPost);
+router.patch('/:id', auth, updatePost);
+router.delete('/:id', auth, deletePost);
+router.patch('/:id/likePost', auth, likePost);
 
 export default router;
